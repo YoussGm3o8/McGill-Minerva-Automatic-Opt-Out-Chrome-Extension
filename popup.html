@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>McGill Fee Opt-Out</title>
+  <style>
+    body {
+      width: 300px;
+      font-family: Arial, sans-serif;
+      padding: 15px;
+    }
+    #fee-list-container {
+      margin-bottom: 15px;
+    }
+    .fee-item {
+      margin: 8px 0;
+    }
+    label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    button {
+      width: 100%;
+      padding: 8px;
+      background-color: #005596;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #003d6b;
+    }
+    .error-message {
+      color: #d32f2f;
+      padding: 10px;
+      background-color: #ffebee;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h3>McGill Fee Opt-Out</h3>
+  <div id="content">
+    <form id="opt-out-form">
+      <div class="select-all-container" style="margin-bottom: 10px; padding: 8px 0; border-bottom: 1px solid #eee;">
+        <label style="font-weight: bold;">
+          <input type="checkbox" id="select-all" /> Select All Fees
+        </label>
+      </div>
+      <div id="fee-list-container">
+        <!-- Checkboxes will be inserted here -->
+      </div>
+      <div id="warning-message" style="display: none; color: #ff3d00; background: #fff3e0; padding: 10px; margin: 10px 0; border-radius: 4px;">
+        <strong>Do not refresh the page!</strong><br>
+        Opt-out process in progress...
+      </div>
+      <div id="progress-info" style="margin: 10px 0; display: none;">
+        <div style="color: #005596; margin-bottom: 5px;">Current: <span id="current-fee">-</span></div>
+        <div style="color: #666;">Next: <span id="next-fee">-</span></div>
+      </div>
+      <button type="submit">Submit Opt-Out</button>
+    </form>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

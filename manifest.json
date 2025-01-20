@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "Auto Opt-Out Extension",
+    "description": "Automatically opt out of fees",
+    "version": "1.0",
+    "permissions": [
+      "activeTab",
+      "storage"
+    ],
+    "content_scripts": [
+      {
+        "matches": [
+          "https://horizon.mcgill.ca/pban1/bztkopto.p_display_all_fees*",
+          "https://horizon.mcgill.ca/pban1/bztkopto.pm_agree_opt_out*",
+          "https://horizon.mcgill.ca/pban1/bztkopto.pm_opt_out_processing*",
+          "https://horizon.mcgill.ca/pban1/bztkopto.pm_confirm_opt_out*"
+        ],
+        "js": ["content.js"]
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html"
+    }
+  }
